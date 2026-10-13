@@ -1,0 +1,8 @@
+{
+  "name": "Satendra Singh Portfolio",
+  "description": "Professional showcase for Satendra Singh, CEO of UPSC ZONE AI, highlighting his expertise in AI, education, and digital strategy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
