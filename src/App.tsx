@@ -545,7 +545,18 @@ export function App() {
                         src={item.image}
                         alt={item.title}
                         referrerPolicy="no-referrer"
-                        onError={() => handleImageError(item.id)}
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (item.id === 'upsc-zone-ai-os' && !target.src.includes('upsc_zone_os_showcase.jpg')) {
+                            target.src = '/images/upsc_zone_os_showcase.jpg';
+                          } else if (item.id === 'historical-scholarship-pedagogy' && !target.src.includes('academic_history_archive.jpg')) {
+                            target.src = '/images/academic_history_archive.jpg';
+                          } else if (item.id === 'digital-growth-engineering' && !target.src.includes('digital_growth_strategy.jpg')) {
+                            target.src = '/images/digital_growth_strategy.jpg';
+                          } else {
+                            handleImageError(item.id);
+                          }
+                        }}
                         className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
                       />
                     ) : (
@@ -702,6 +713,18 @@ export function App() {
                           {v.status}
                         </span>
                       </div>
+
+                      {/* Visual Thumbnail Banner */}
+                      {v.image && (
+                        <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#EAEAE4] group/img border border-[#E2E2DC]/80 shadow-xs">
+                          <img
+                            src={v.image}
+                            alt={v.title}
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-[1.03]"
+                          />
+                        </div>
+                      )}
 
                       <div className="space-y-1.5">
                         <div className="text-xs font-semibold uppercase tracking-wider text-[#52524E]">
@@ -1613,6 +1636,17 @@ export function App() {
                 <X className="w-4 h-4" />
               </button>
             </div>
+
+            {selectedVisionItem.image && (
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#EAEAE4]">
+                <img
+                  src={selectedVisionItem.image}
+                  alt={selectedVisionItem.title}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
 
             <div className="space-y-4 text-sm sm:text-base text-[#3A3A37] leading-relaxed">
               <p>{selectedVisionItem.description}</p>

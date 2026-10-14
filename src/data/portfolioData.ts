@@ -1,3 +1,10 @@
+import upscOsShowcaseImg from '../assets/images/upsc_zone_os_showcase_1791182814018.jpg';
+import academicHistoryImg from '../assets/images/academic_history_archive_1791182824011.jpg';
+import digitalGrowthImg from '../assets/images/digital_growth_strategy_1791182834487.jpg';
+import healthcareDirectoryImg from '../assets/images/healthcare_caretaker_directory_1791968112873.jpg';
+import roboticsBrainImg from '../assets/images/assistive_robotics_brain_1791968143906.jpg';
+import digitalClassroomResearchImg from '../assets/images/digital_classroom_research_1791968165341.jpg';
+
 export interface PortfolioItem {
   id: string;
   index: string;
@@ -94,7 +101,7 @@ export const BENTO_PORTFOLIO_ITEMS: PortfolioItem[] = [
     categoryLabel: 'AI Product & Vision',
     period: 'Present · Founder & CEO',
     organization: 'UPSC ZONE AI',
-    image: '/src/assets/images/upsc_zone_os_showcase_1791182814018.jpg',
+    image: upscOsShowcaseImg,
     aspect: 'wide',
     summary:
       "Architecting India's first unified AI Operating System tailored for competitive exam aspirants. UPSC ZONE AI replaces fragmented PDFs, static syllabus trackers, and generic rote schedules with adaptive neural study workflows that turn daily preparation into an intellectually rewarding hobby.",
@@ -121,7 +128,7 @@ export const BENTO_PORTFOLIO_ITEMS: PortfolioItem[] = [
     categoryLabel: 'Academic & Mentorship',
     period: '5+ Years Domain Depth',
     organization: 'UGC-NET · KVS · Vedantu',
-    image: '/src/assets/images/academic_history_archive_1791182824011.jpg',
+    image: academicHistoryImg,
     aspect: 'standard',
     summary:
       'Grounded in formal undergraduate and postgraduate degrees in History, reinforced by over five years of intensive UPSC Civil Services preparation and national examination qualifications.',
@@ -148,7 +155,7 @@ export const BENTO_PORTFOLIO_ITEMS: PortfolioItem[] = [
     categoryLabel: 'Growth & Engineering',
     period: '5+ Years Execution',
     organization: 'IIM Indore Alumni Program · UPSC ZONE AI',
-    image: '/src/assets/images/digital_growth_strategy_1791182834487.jpg',
+    image: digitalGrowthImg,
     aspect: 'standard',
     summary:
       'A rare founder intersection combining modern software development and AI product engineering with over five years of technical SEO and digital marketing mastery.',
@@ -298,6 +305,7 @@ export interface VisionItem {
   description: string;
   impact: string;
   status: 'In Research' | 'Prototype' | 'Roadmap 2026-2028';
+  image?: string;
 }
 
 export const FUTURE_VISION_ITEMS: VisionItem[] = [
@@ -308,7 +316,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Healthcare & Social Care',
     description: 'A verified, AI-vetted directory connecting families with trained patient caretakers, elderly nursing specialists, and verified home healthcare professionals across India.',
     impact: 'Dignified care for elders and patients with transparent verification and emergency dispatch.',
-    status: 'Roadmap 2026-2028'
+    status: 'Roadmap 2026-2028',
+    image: healthcareDirectoryImg
   },
   {
     id: 'job-listing',
@@ -317,7 +326,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Employment & Aspirant Career Transition',
     description: 'Direct employment and internship matching platform connecting competitive exam aspirants, educators, content creators, and developers with verified enterprise openings.',
     impact: 'Ensuring every sincere learner and graduate finds meaningful career pathways beyond government exams.',
-    status: 'Prototype'
+    status: 'Prototype',
+    image: digitalGrowthImg
   },
   {
     id: 'digital-classrooms',
@@ -326,7 +336,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Immersive EdTech',
     description: 'Low-latency, interactive virtual classrooms designed for Tier-2, Tier-3 and rural students with offline sync, interactive 3D historical maps, and personalized AI doubt assistance.',
     impact: 'Democratizing world-class lecture halls into any low-cost mobile phone or community screen.',
-    status: 'Prototype'
+    status: 'Prototype',
+    image: digitalClassroomResearchImg
   },
   {
     id: 'robots-hardware',
@@ -335,7 +346,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Robotics & Hardware',
     description: 'Affordable robotic systems designed to assist in laboratory experiments, classroom demonstration, and daily supportive assistance for physically challenged learners.',
     impact: 'Bringing tangible robotic hardware within reach of Indian schools and colleges.',
-    status: 'In Research'
+    status: 'In Research',
+    image: roboticsBrainImg
   },
   {
     id: 'brain-for-robots',
@@ -344,7 +356,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Autonomous AI & Robotics',
     description: 'A sovereign cognitive software OS and multi-modal neural architecture providing perception, reasoning, and real-time situational decision-making for assistive robotics.',
     impact: 'Creating foundational cognitive intelligence for next-generation domestic and educational machines.',
-    status: 'In Research'
+    status: 'In Research',
+    image: roboticsBrainImg
   },
   {
     id: 'ngo-for-poors',
@@ -353,7 +366,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Philanthropy & Social Equity',
     description: 'Dedicated non-profit foundation providing 100% free books, AI study subscriptions, tablet devices, and nutritional support to economically disadvantaged aspirants.',
     impact: 'Zero students left behind due to poverty or financial distress in their educational journey.',
-    status: 'Roadmap 2026-2028'
+    status: 'Roadmap 2026-2028',
+    image: digitalClassroomResearchImg
   },
   {
     id: 'research-center',
@@ -362,7 +376,8 @@ export const FUTURE_VISION_ITEMS: VisionItem[] = [
     category: 'Scientific Research',
     description: 'An interdisciplinary research institute bridging historical linguistics, Indian constitutional archives, and bleeding-edge machine learning model development.',
     impact: 'Publishing peer-reviewed discoveries and training India’s next generation of cognitive scientists.',
-    status: 'In Research'
+    status: 'In Research',
+    image: academicHistoryImg
   }
 ];
 
