@@ -56,26 +56,136 @@ export function App() {
     setImageErrors((prev) => ({ ...prev, [id]: true }));
   };
 
-  // Dynamic canonical & OpenGraph URL resolution for SPA SEO
-  useEffect(() => {
-    const currentUrl = window.location.origin + window.location.pathname;
+  // Route-level SEO metadata & section scroll mapping for clean crawlable URLs
+  const SEO_ROUTES: Record<
+    string,
+    { sectionId: string; title: string; description: string }
+  > = {
+    '/': {
+      sectionId: 'top',
+      title: 'Biography of Satendra Singh – Founder & CEO, UPSC ZONE AI',
+      description:
+        'Explore the official biography of Satendra Singh, Founder & CEO of UPSC ZONE AI, 2× UGC-NET History scholar, KVS qualifier, and EdTech AI strategist.'
+    },
+    '/vision': {
+      sectionId: 'vision',
+      title: 'Vision & Biography | Satendra Singh – Founder & CEO, UPSC ZONE AI',
+      description:
+        "Discover Satendra Singh's mission to build India's first AI Operating System for competitive exams, turning education into an engaging hobby."
+    },
+    '/upsc-zone-ai': {
+      sectionId: 'ventures',
+      title: 'UPSC ZONE AI Architecture | Biography of Satendra Singh',
+      description:
+        'Explore UPSC ZONE AI product strategy, historical pedagogy, and full-stack AI growth engineering led by Founder & CEO Satendra Singh.'
+    },
+    '/future-vision': {
+      sectionId: 'future-vision',
+      title: 'Future Vision Ecosystem | Biography of Satendra Singh',
+      description:
+        "Seven frontier initiatives by Satendra Singh spanning healthcare caretaker hiring, digital classrooms, assistive robotics, Brain For Robots, and education NGOs."
+    },
+    '/credentials': {
+      sectionId: 'credentials',
+      title: 'Academic & Exam Credentials | Biography of Satendra Singh',
+      description:
+        'Chronological career timeline and verified credentials of Satendra Singh: M.A. & B.A. History, 2× UGC-NET, KVS Exam, IIM Indore, and Vedantu.'
+    },
+    '/leadership': {
+      sectionId: 'leadership',
+      title: 'Executive Leadership Pillars | Biography of Satendra Singh',
+      description:
+        'Five executive leadership pillars of Satendra Singh at UPSC ZONE AI uniting product strategy, AI engineering, historical rigor, SEO, and mentorship.'
+    },
+    '/social-radar': {
+      sectionId: 'social-radar',
+      title: 'Official Social Channels & Radar | Biography of Satendra Singh',
+      description:
+        'Connect directly with Satendra Singh across verified social channels including Instagram (@st.upsc), X (@hist_satendra), LinkedIn, and official email.'
+    },
+    '/contact': {
+      sectionId: 'connect',
+      title: 'Contact & Direct Inquiries | Biography of Satendra Singh',
+      description:
+        'Submit partnership, speaking, advisory, or mentorship inquiries directly to Satendra Singh, Founder & CEO of UPSC ZONE AI.'
+    }
+  };
+
+  const applyRouteSeo = (pathname: string) => {
+    const normalizedPath =
+      pathname.length > 1 && pathname.endsWith('/')
+        ? pathname.slice(0, -1)
+        : pathname;
+    const routeMeta = SEO_ROUTES[normalizedPath] ?? SEO_ROUTES['/'];
+    const currentUrl = window.location.origin + (SEO_ROUTES[normalizedPath] ? normalizedPath : '/');
+
+    document.title = routeMeta.title;
+
+    const descMeta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (descMeta) descMeta.content = routeMeta.description;
+
     const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (canonicalLink) {
-      canonicalLink.href = currentUrl;
-    }
+    if (canonicalLink) canonicalLink.href = currentUrl;
+
     const ogUrlMeta = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
-    if (ogUrlMeta) {
-      ogUrlMeta.content = currentUrl;
-    }
+    if (ogUrlMeta) ogUrlMeta.content = currentUrl;
+
+    const ogTitleMeta = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
+    if (ogTitleMeta) ogTitleMeta.content = routeMeta.title;
+
+    const ogDescMeta = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
+    if (ogDescMeta) ogDescMeta.content = routeMeta.description;
+
+    const twitterTitleMeta = document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]');
+    if (twitterTitleMeta) twitterTitleMeta.content = routeMeta.title;
+
+    const twitterDescMeta = document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]');
+    if (twitterDescMeta) twitterDescMeta.content = routeMeta.description;
+
     const absoluteImageUrl = `${window.location.origin}/satendra_official.jpg`;
     const ogImageMeta = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
-    if (ogImageMeta) {
-      ogImageMeta.content = absoluteImageUrl;
-    }
+    if (ogImageMeta) ogImageMeta.content = absoluteImageUrl;
+
     const twitterImageMeta = document.querySelector<HTMLMetaElement>('meta[name="twitter:image"]');
-    if (twitterImageMeta) {
-      twitterImageMeta.content = absoluteImageUrl;
+    if (twitterImageMeta) twitterImageMeta.content = absoluteImageUrl;
+
+    return routeMeta.sectionId;
+  };
+
+  const navigateToRoute = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string
+  ) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
     }
+    const sectionId = applyRouteSeo(path);
+    const targetEl = document.getElementById(sectionId);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (path === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // Sync SEO metadata & section scroll on initial load and browser back/forward
+  useEffect(() => {
+    const syncFromLocation = (shouldScroll: boolean) => {
+      const sectionId = applyRouteSeo(window.location.pathname);
+      if (shouldScroll && window.location.pathname !== '/') {
+        const targetEl = document.getElementById(sectionId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    syncFromLocation(true);
+    const onPopState = () => syncFromLocation(true);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   // Close modals on Escape key
@@ -122,7 +232,8 @@ export function App() {
       <header className="sticky top-0 z-50 h-14 bg-[#F4F4F0]/95 backdrop-blur-md border-b border-[#E2E2DC] px-4 sm:px-8 lg:px-12 flex items-center justify-between shadow-xs">
         {/* Zone 1: Wordmark */}
         <a
-          href="#top"
+          href="/"
+          onClick={(e) => navigateToRoute(e, '/')}
           className="font-editorial text-2xl tracking-tight text-[#111110] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1E3A8A]"
         >
           Satendra Singh
@@ -131,44 +242,51 @@ export function App() {
         {/* Zone 2: Navigation Links (Desktop) */}
         <nav aria-label="Primary Navigation" className="hidden lg:flex items-center gap-7 text-xs sm:text-sm font-medium text-[#52524E]">
           <a
-            href="#vision"
+            href="/vision"
+            onClick={(e) => navigateToRoute(e, '/vision')}
             className="hover:text-[#111110] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
           >
             Vision
           </a>
           <a
-            href="#ventures"
+            href="/upsc-zone-ai"
+            onClick={(e) => navigateToRoute(e, '/upsc-zone-ai')}
             className="hover:text-[#111110] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
           >
             UPSC ZONE AI
           </a>
           <a
-            href="#future-vision"
+            href="/future-vision"
+            onClick={(e) => navigateToRoute(e, '/future-vision')}
             className="hover:text-[#111110] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
           >
             Future Vision
           </a>
           <a
-            href="#credentials"
+            href="/credentials"
+            onClick={(e) => navigateToRoute(e, '/credentials')}
             className="hover:text-[#111110] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
           >
             Credentials
           </a>
           <a
-            href="#leadership"
+            href="/leadership"
+            onClick={(e) => navigateToRoute(e, '/leadership')}
             className="hover:text-[#111110] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
           >
             Leadership
           </a>
           <a
-            href="#social-radar"
+            href="/social-radar"
+            onClick={(e) => navigateToRoute(e, '/social-radar')}
             className="text-[#1E3A8A] font-semibold hover:underline underline-offset-4 transition-colors whitespace-nowrap flex items-center gap-1.5"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Social Radar</span>
           </a>
           <a
-            href="#connect"
+            href="/contact"
+            onClick={(e) => navigateToRoute(e, '/contact')}
             className="hover:text-[#111110] hover:underline underline-offset-4 transition-colors whitespace-nowrap"
           >
             Contact
@@ -178,7 +296,8 @@ export function App() {
         {/* Zone 3: Primary CTA + Sticky Mobile Menu Toggle */}
         <div className="flex items-center gap-2.5">
           <a
-            href="#connect"
+            href="/contact"
+            onClick={(e) => navigateToRoute(e, '/contact')}
             className="px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs font-semibold text-white bg-[#1E3A8A] rounded-lg hover:bg-[#172E6E] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1E3A8A]"
           >
             Get in Touch
@@ -210,24 +329,24 @@ export function App() {
             </div>
             <nav className="flex flex-col space-y-1 text-base font-medium text-[#111110]">
               <a
-                href="#vision"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/vision"
+                onClick={(e) => navigateToRoute(e, '/vision')}
                 className="py-2.5 border-b border-[#E2E2DC]/70 flex items-center justify-between hover:text-[#1E3A8A] transition-colors"
               >
                 <span>Vision & Founder Bio</span>
                 <ChevronRight className="w-4 h-4 text-[#52524E]" />
               </a>
               <a
-                href="#ventures"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/upsc-zone-ai"
+                onClick={(e) => navigateToRoute(e, '/upsc-zone-ai')}
                 className="py-2.5 border-b border-[#E2E2DC]/70 flex items-center justify-between hover:text-[#1E3A8A] transition-colors"
               >
                 <span>UPSC ZONE AI Architecture</span>
                 <ChevronRight className="w-4 h-4 text-[#52524E]" />
               </a>
               <a
-                href="#future-vision"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/future-vision"
+                onClick={(e) => navigateToRoute(e, '/future-vision')}
                 className="py-2.5 border-b border-[#E2E2DC]/70 flex items-center justify-between text-[#1E3A8A] font-semibold hover:text-[#172E6E] transition-colors"
               >
                 <div className="flex items-center gap-2">
@@ -237,24 +356,24 @@ export function App() {
                 <ChevronRight className="w-4 h-4" />
               </a>
               <a
-                href="#credentials"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/credentials"
+                onClick={(e) => navigateToRoute(e, '/credentials')}
                 className="py-2.5 border-b border-[#E2E2DC]/70 flex items-center justify-between hover:text-[#1E3A8A] transition-colors"
               >
                 <span>Academic & Exam Credentials</span>
                 <ChevronRight className="w-4 h-4 text-[#52524E]" />
               </a>
               <a
-                href="#leadership"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/leadership"
+                onClick={(e) => navigateToRoute(e, '/leadership')}
                 className="py-2.5 border-b border-[#E2E2DC]/70 flex items-center justify-between hover:text-[#1E3A8A] transition-colors"
               >
                 <span>Executive Leadership Pillars</span>
                 <ChevronRight className="w-4 h-4 text-[#52524E]" />
               </a>
               <a
-                href="#social-radar"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/social-radar"
+                onClick={(e) => navigateToRoute(e, '/social-radar')}
                 className="py-2.5 border-b border-[#E2E2DC]/70 flex items-center justify-between text-emerald-800 font-semibold transition-colors"
               >
                 <div className="flex items-center gap-2">
@@ -266,8 +385,8 @@ export function App() {
                 </span>
               </a>
               <a
-                href="#connect"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/contact"
+                onClick={(e) => navigateToRoute(e, '/contact')}
                 className="py-2.5 flex items-center justify-between text-[#1E3A8A] font-semibold"
               >
                 <span>Contact Form & Inquiries</span>
@@ -278,8 +397,8 @@ export function App() {
             <div className="pt-3 border-t border-[#E2E2DC] flex items-center justify-between text-xs text-[#52524E]">
               <span>UPSC ZONE AI · Satendra Singh</span>
               <a
-                href="#social-radar"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/social-radar"
+                onClick={(e) => navigateToRoute(e, '/social-radar')}
                 className="text-[#1E3A8A] font-medium underline underline-offset-4"
               >
                 View Radar Channels
@@ -344,7 +463,8 @@ export function App() {
               {/* Action Buttons: Social links removed from here as instructed, moved to dedicated Radar section */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-2 border-t border-[#E2E2DC]">
                 <a
-                  href="#ventures"
+                  href="/upsc-zone-ai"
+                  onClick={(e) => navigateToRoute(e, '/upsc-zone-ai')}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-[#1E3A8A] rounded-lg hover:bg-[#172E6E] transition-colors whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1E3A8A]"
                 >
                   <span>Explore UPSC ZONE AI Architecture</span>
@@ -352,7 +472,8 @@ export function App() {
                 </a>
 
                 <a
-                  href="#future-vision"
+                  href="/future-vision"
+                  onClick={(e) => navigateToRoute(e, '/future-vision')}
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[#111110] bg-[#FAF9F5] border border-[#E2E2DC] rounded-lg hover:bg-[#EAEAE4] transition-colors whitespace-nowrap"
                 >
                   <span>Future Vision Ecosystem</span>
@@ -360,7 +481,8 @@ export function App() {
                 </a>
 
                 <a
-                  href="#social-radar"
+                  href="/social-radar"
+                  onClick={(e) => navigateToRoute(e, '/social-radar')}
                   className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-[#1E3A8A] hover:text-[#172E6E] transition-colors whitespace-nowrap"
                 >
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -1529,10 +1651,27 @@ export function App() {
             </a>
             <span aria-hidden="true">·</span>
             <a
-              href="#social-radar"
+              href="/social-radar"
+              onClick={(e) => navigateToRoute(e, '/social-radar')}
               className="text-[#1E3A8A] font-semibold hover:underline"
             >
               Tactical Radar
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="/credentials"
+              onClick={(e) => navigateToRoute(e, '/credentials')}
+              className="hover:text-[#111110] transition-colors"
+            >
+              Credentials
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="/contact"
+              onClick={(e) => navigateToRoute(e, '/contact')}
+              className="hover:text-[#111110] transition-colors"
+            >
+              Contact
             </a>
           </div>
         </div>

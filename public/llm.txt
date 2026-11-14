@@ -41,6 +41,16 @@
 - **Email**: mailto:upsczoneai@gmail.com
 - **Direct Inquiry Form**: https://forms.gle/E8ye7Y6SQaL4dhoR7
 
+## Indexed Pages
+- Home & Biography: https://ceo.upsczone.in/
+- Vision & Founder Bio: https://ceo.upsczone.in/vision
+- UPSC ZONE AI Architecture: https://ceo.upsczone.in/upsc-zone-ai
+- Future Vision Ecosystem: https://ceo.upsczone.in/future-vision
+- Academic & Exam Credentials: https://ceo.upsczone.in/credentials
+- Executive Leadership Pillars: https://ceo.upsczone.in/leadership
+- Social Radar Channels: https://ceo.upsczone.in/social-radar
+- Contact & Direct Inquiries: https://ceo.upsczone.in/contact
+
 ## Sitemaps & Indexing
 - Primary Sitemap: https://ceo.upsczone.in/sitemap.xml
 - Image Sitemap: https://ceo.upsczone.in/sitemap-images.xml

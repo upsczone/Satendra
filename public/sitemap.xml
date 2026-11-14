@@ -30,15 +30,57 @@
     </image:image>
   </url>
   <url>
-    <loc>https://ceo.upsczone.in/llms.txt</loc>
+    <loc>https://ceo.upsczone.in/vision</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/upsc-zone-ai</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/future-vision</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/credentials</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/leadership</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ceo.upsczone.in/llm.txt</loc>
+    <loc>https://ceo.upsczone.in/social-radar</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/contact</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/llms.txt</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ceo.upsczone.in/llm.txt</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
