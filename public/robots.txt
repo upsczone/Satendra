@@ -43,9 +43,9 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemaps
-Sitemap: https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/sitemap.xml
-Sitemap: https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/sitemap-images.xml
+Sitemap: https://ceo.upsczone.in/sitemap.xml
+Sitemap: https://ceo.upsczone.in/sitemap-images.xml
 
 # LLM Context Files
-# https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/llms.txt
-# https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/llm.txt
+# https://ceo.upsczone.in/llms.txt
+# https://ceo.upsczone.in/llm.txt

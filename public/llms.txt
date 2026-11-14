@@ -6,8 +6,9 @@
 - **Full Name**: Satendra Singh
 - **Title / Role**: Founder & Chief Executive Officer, UPSC ZONE AI
 - **Mission**: Building India's First AI Operating System for Competitive Exams — making learning personalized, engaging, and accessible while helping students treat education as a hobby rather than a burden.
+- **Official Website**: https://ceo.upsczone.in/
 - **Official Email**: upsczoneai@gmail.com
-- **Official Portrait**: /satendra_official.jpg
+- **Official Portrait**: https://ceo.upsczone.in/satendra_official.jpg
 
 ## Verified Academic & Examination Credentials
 1. **Founder & CEO — UPSC ZONE AI**: Leads end-to-end product strategy, AI technology vision, syllabus-aligned content development, organic SEO growth, and national business expansion.
@@ -41,6 +42,6 @@
 - **Direct Inquiry Form**: https://forms.gle/E8ye7Y6SQaL4dhoR7
 
 ## Sitemaps & Indexing
-- Primary Sitemap: /sitemap.xml
-- Image Sitemap: /sitemap-images.xml
-- Robots Policy: /robots.txt
+- Primary Sitemap: https://ceo.upsczone.in/sitemap.xml
+- Image Sitemap: https://ceo.upsczone.in/sitemap-images.xml
+- Robots Policy: https://ceo.upsczone.in/robots.txt
