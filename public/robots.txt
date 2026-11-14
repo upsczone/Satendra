@@ -1,0 +1,51 @@
+# robots.txt for Biography of Satendra Singh
+# Official Website: Founder & CEO, UPSC ZONE AI
+
+User-agent: *
+Allow: /
+
+# Major Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI Crawlers & LLM Indexers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemaps
+Sitemap: https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/sitemap.xml
+Sitemap: https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/sitemap-images.xml
+
+# LLM Context Files
+# https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/llms.txt
+# https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/llm.txt

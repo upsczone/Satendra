@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/satendra_official.jpg</image:loc>
+      <image:title>Satendra Singh — Founder &amp; CEO of UPSC ZONE AI</image:title>
+      <image:caption>Official studio portrait of Satendra Singh, Founder and CEO of UPSC ZONE AI.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/images/upsc_zone_os_showcase.jpg</image:loc>
+      <image:title>UPSC ZONE AI Operating System Showcase</image:title>
+      <image:caption>India's First AI Operating System for Competitive Exams founded by Satendra Singh.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/images/academic_history_archive.jpg</image:loc>
+      <image:title>Historical Scholarship &amp; Competitive Pedagogy</image:title>
+      <image:caption>Satendra Singh academic archive covering M.A. &amp; B.A. History, 2x UGC-NET, and KVS qualifications.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/images/digital_growth_strategy.jpg</image:loc>
+      <image:title>Full-Stack Engineering &amp; Organic Growth Engine</image:title>
+      <image:caption>IIM Indore Digital Marketing, 5+ years SEO mastery, and modern AI software engineering.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/llms.txt</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ais-pre-nw55zfu6yrjl5yleqpmmap-889937547208.asia-southeast1.run.app/llm.txt</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

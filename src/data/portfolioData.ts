@@ -487,3 +487,140 @@ export const RADAR_TARGETS: RadarTarget[] = [
   }
 ];
 
+export interface TimelineMilestone {
+  id: string;
+  step: string;
+  era: string;
+  track: 'education' | 'career';
+  trackLabel: string;
+  title: string;
+  organization: string;
+  summary: string;
+  hoverDetails: string;
+  highlights: string[];
+  credentialId?: string;
+}
+
+export const TIMELINE_MILESTONES: TimelineMilestone[] = [
+  {
+    id: 'milestone-ba-history',
+    step: '01',
+    era: 'Undergraduate',
+    track: 'education',
+    trackLabel: 'Academic Foundation',
+    title: 'Bachelor of Arts (B.A.) in History',
+    organization: 'Undergraduate Historical Studies',
+    summary: 'Built foundational command of historical inquiry, primary evidence, and socio-political analysis.',
+    hoverDetails:
+      'Completed undergraduate specialization in History, developing analytical discipline across Ancient, Medieval, and Modern historical frameworks.',
+    highlights: [
+      'Trained in source criticism, chronological synthesis, and historical causation.',
+      'Laid the humanities bedrock for interdisciplinary civil services study.'
+    ],
+    credentialId: 'ba-ma-history'
+  },
+  {
+    id: 'milestone-ma-history',
+    step: '02',
+    era: 'Postgraduate',
+    track: 'education',
+    trackLabel: 'Academic Specialization',
+    title: 'Master of Arts (M.A.) in History',
+    organization: 'Postgraduate Historical Studies',
+    summary: 'Advanced postgraduate scholarship in historiography, constitutional evolution, and global history.',
+    hoverDetails:
+      'Deepened research methodology and long-form academic synthesis, bridging archival scholarship with structured conceptual teaching.',
+    highlights: [
+      'Mastered Indian and World Historiography alongside constitutional frameworks.',
+      'Established rigorous scholarly standards later embedded into UPSC ZONE AI.'
+    ],
+    credentialId: 'ba-ma-history'
+  },
+  {
+    id: 'milestone-upsc-prep',
+    step: '03',
+    era: '5+ Years Rigor',
+    track: 'education',
+    trackLabel: 'Civil Services Immersion',
+    title: 'UPSC Civil Services Preparation & Synthesis',
+    organization: '5+ Years Intensive Domain Mastery',
+    summary: 'Over five years of dedicated UPSC preparation across Prelims, Mains answer writing, and GS synthesis.',
+    hoverDetails:
+      'Gained first-hand insight into the cognitive load, syllabus fragmentation, and revision bottlenecks faced by lakhs of Indian aspirants.',
+    highlights: [
+      'Mastered interdisciplinary linking across History, Polity, Economy, and Ethics.',
+      'Identified the exact study inefficiencies that inspired an AI Operating System.'
+    ],
+    credentialId: 'founder-ceo-upsc-zone-ai'
+  },
+  {
+    id: 'milestone-ugc-net-kvs',
+    step: '04',
+    era: 'National Exams',
+    track: 'education',
+    trackLabel: 'National Benchmarks',
+    title: '2× UGC-NET History & KVS Exam Qualified',
+    organization: 'UGC · Kendriya Vidyalaya Sangathan',
+    summary: 'Qualified UGC-NET twice in History and cleared the national KVS educator recruitment examination.',
+    hoverDetails:
+      'Earned Assistant Professor eligibility twice via UGC-NET while validating national classroom pedagogy and assessment mastery through KVS.',
+    highlights: [
+      'Top-percentile subject validation across all four historical periods.',
+      'Proven pedagogical mastery in structured lesson design and learner evaluation.'
+    ],
+    credentialId: 'ugc-net-twice'
+  },
+  {
+    id: 'milestone-vedantu',
+    step: '05',
+    era: '1+ Yr Mentorship',
+    track: 'career',
+    trackLabel: 'EdTech Mentorship',
+    title: 'Doubt Expert & Student Mentor',
+    organization: 'Vedantu',
+    summary: 'Mentored students directly as a Doubt Expert, turning high-friction academic hurdles into clarity.',
+    hoverDetails:
+      'Worked directly with learners to diagnose conceptual gaps in real time, shaping a student-first pedagogy centered on curiosity over rote pressure.',
+    highlights: [
+      'Resolved complex conceptual bottlenecks across live digital mentorship workflows.',
+      'Validated the core thesis: immediate, empathetic guidance transforms retention.'
+    ],
+    credentialId: 'vedantu-doubt-expert'
+  },
+  {
+    id: 'milestone-iim-seo',
+    step: '06',
+    era: '5+ Yrs Execution',
+    track: 'career',
+    trackLabel: 'Growth & Engineering',
+    title: 'IIM Indore Digital Marketing & 5+ Yrs SEO',
+    organization: 'IIM Indore · Full-Stack AI Product Dev',
+    summary: 'Combined IIM Indore Digital Marketing certification with 5+ years of SEO and software engineering.',
+    hoverDetails:
+      'Merged premier management and organic search distribution frameworks with hands-on modern web and AI software development.',
+    highlights: [
+      'Completed online Digital Marketing executive program from IIM Indore.',
+      'Architected full-funnel technical SEO and scalable AI-native product systems.'
+    ],
+    credentialId: 'iim-indore-digital-marketing'
+  },
+  {
+    id: 'milestone-upsc-zone-ai',
+    step: '07',
+    era: 'Present · CEO',
+    track: 'career',
+    trackLabel: 'Executive Leadership',
+    title: 'Founder & CEO, UPSC ZONE AI',
+    organization: 'UPSC ZONE AI',
+    summary: "Building India's first AI Operating System for Competitive Exams across five executive pillars.",
+    hoverDetails:
+      'Leading product strategy, AI technology vision, syllabus-aligned content architecture, organic growth, and national business expansion.',
+    highlights: [
+      'Unifying adaptive AI study workflows with verified historical scholarship.',
+      'Transforming competitive exam preparation into an engaging, lifelong hobby.'
+    ],
+    credentialId: 'founder-ceo-upsc-zone-ai'
+  }
+];
+
+

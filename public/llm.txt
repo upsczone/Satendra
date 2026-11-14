@@ -1,0 +1,46 @@
+# Biography of Satendra Singh
+
+> Official biography, academic credentials, executive leadership pillars, and future vision ecosystem of Satendra Singh — Founder & CEO of UPSC ZONE AI.
+
+## Overview
+- **Full Name**: Satendra Singh
+- **Title / Role**: Founder & Chief Executive Officer, UPSC ZONE AI
+- **Mission**: Building India's First AI Operating System for Competitive Exams — making learning personalized, engaging, and accessible while helping students treat education as a hobby rather than a burden.
+- **Official Email**: upsczoneai@gmail.com
+- **Official Portrait**: /satendra_official.jpg
+
+## Verified Academic & Examination Credentials
+1. **Founder & CEO — UPSC ZONE AI**: Leads end-to-end product strategy, AI technology vision, syllabus-aligned content development, organic SEO growth, and national business expansion.
+2. **UGC-NET Qualified (Twice) — History**: Qualified the University Grants Commission National Eligibility Test twice in History, validating university-level research and Assistant Professor eligibility.
+3. **KVS Examination Qualified**: Qualified the Kendriya Vidyalaya Sangathan (KVS) national educator examination.
+4. **Master's & Bachelor's Degrees in History (M.A. & B.A. History)**: Formal dual-degree foundation in Ancient, Medieval, Modern, and World History, reinforced by 5+ years of intensive UPSC Civil Services preparation.
+5. **Digital Marketing Program — IIM Indore**: Completed the online executive Digital Marketing program from the Indian Institute of Management (IIM) Indore, paired with 5+ years of practical technical SEO and organic growth execution.
+6. **Doubt Expert & Student Mentor — Vedantu**: Over 1 year of direct teaching and student mentorship, resolving complex academic bottlenecks at scale.
+
+## Core Executive Pillars at UPSC ZONE AI
+1. **Product Strategy**: Designing high-leverage workflows that replace fragmented study PDFs and rote schedules with adaptive AI workflows.
+2. **Technology Vision & AI Development**: Modern full-stack web and AI product engineering tailored for competitive exam readiness.
+3. **Content Development & Academic Rigor**: Zero-compromise historical and interdisciplinary accuracy backed by 2x UGC-NET and KVS qualifications.
+4. **Digital Growth & SEO Architecture**: 5+ years of SEO mastery and IIM Indore marketing frameworks driving nationwide organic reach.
+5. **Business Expansion & Mentorship**: Scaling partnerships and student communities while keeping mentorship personal and empathetic.
+
+## Future Vision Ecosystem (7 Frontier Initiatives)
+1. **Healthcare Directory & Caretaker Hiring**: AI-vetted directory connecting families with verified patient caretakers and home healthcare professionals across India.
+2. **Merit-Based Job & Opportunity Exchange**: Connecting competitive exam aspirants, educators, creators, and developers with verified enterprise opportunities.
+3. **Next-Gen Digital Classrooms**: Low-latency virtual classrooms with offline sync, interactive 3D historical maps, and AI doubt resolution for Tier-2, Tier-3, and rural learners.
+4. **Robotics for Everyday Assistance & Education**: Affordable assistive robotic systems for laboratories, classrooms, and physically challenged learners.
+5. **Brain For Robots (Cognitive Neural Core)**: Sovereign multi-modal cognitive software OS providing perception, reasoning, and situational decision-making for assistive robotics.
+6. **NGO For Underprivileged & Poor Students**: Non-profit foundation providing free books, AI study subscriptions, tablet devices, and nutritional support.
+7. **Advanced AI & Historical Research Center**: Interdisciplinary institute bridging historical linguistics, Indian constitutional archives, and machine learning research.
+
+## Official Channels & Social Profiles
+- **Instagram**: https://instagram.com/st.upsc (@st.upsc)
+- **X (Twitter)**: https://x.com/hist_satendra (@hist_satendra)
+- **LinkedIn**: https://linkedin.com/in/satendrasinghceo (satendrasinghceo)
+- **Email**: mailto:upsczoneai@gmail.com
+- **Direct Inquiry Form**: https://forms.gle/E8ye7Y6SQaL4dhoR7
+
+## Sitemaps & Indexing
+- Primary Sitemap: /sitemap.xml
+- Image Sitemap: /sitemap-images.xml
+- Robots Policy: /robots.txt

@@ -28,11 +28,13 @@ import {
   EXECUTIVE_PILLARS,
   FUTURE_VISION_ITEMS,
   RADAR_TARGETS,
+  TIMELINE_MILESTONES,
   PortfolioItem,
   CredentialItem,
   VisionItem,
   RadarTarget
 } from './data/portfolioData';
+import { CredentialsTimeline } from './components/CredentialsTimeline';
 
 export function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,6 +55,28 @@ export function App() {
   const handleImageError = (id: string) => {
     setImageErrors((prev) => ({ ...prev, [id]: true }));
   };
+
+  // Dynamic canonical & OpenGraph URL resolution for SPA SEO
+  useEffect(() => {
+    const currentUrl = window.location.origin + window.location.pathname;
+    const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.href = currentUrl;
+    }
+    const ogUrlMeta = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (ogUrlMeta) {
+      ogUrlMeta.content = currentUrl;
+    }
+    const absoluteImageUrl = `${window.location.origin}/satendra_official.jpg`;
+    const ogImageMeta = document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
+    if (ogImageMeta) {
+      ogImageMeta.content = absoluteImageUrl;
+    }
+    const twitterImageMeta = document.querySelector<HTMLMetaElement>('meta[name="twitter:image"]');
+    if (twitterImageMeta) {
+      twitterImageMeta.content = absoluteImageUrl;
+    }
+  }, []);
 
   // Close modals on Escape key
   useEffect(() => {
@@ -831,6 +855,17 @@ export function App() {
               </div>
             </div>
 
+            {/* Interactive Chronological Career & Educational Timeline */}
+            <CredentialsTimeline
+              milestones={TIMELINE_MILESTONES}
+              onInspectCredential={(credentialId) => {
+                const match = CREDENTIALS_LIST.find((c) => c.id === credentialId);
+                if (match) {
+                  setSelectedCredential(match);
+                }
+              }}
+            />
+
             {/* Credential Dossier Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCredentials.map((cred) => (
@@ -1584,7 +1619,7 @@ export function App() {
               </div>
 
               <div className="pt-4 border-t border-[#E2E2DC] flex items-center justify-between text-xs text-[#52524E]">
-                <span>Satendra Singh Portfolio Archive</span>
+                <span>Biography of Satendra Singh — Official Archive</span>
                 <button
                   type="button"
                   onClick={() => setSelectedPortfolioItem(null)}
